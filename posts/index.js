@@ -21,7 +21,9 @@ app.post('/posts',(req, res) => {
     posts[id] = {
         id, title
     };
-
+    axios.post('http://localhost:4005/events',{
+        
+    })
     res.status(201).send(posts[id]);
 });
 
