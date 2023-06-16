@@ -22,10 +22,20 @@ app.post('/posts',(req, res) => {
         id, title
     };
     axios.post('http://localhost:4005/events',{
-        
+        type: 'CommentCreated',
+        data:{
+            id:commentId,
+            content,
+            postId:req.params.id
+        }
     })
     res.status(201).send(posts[id]);
 });
+app.post('/events', (req, res)=> {
+    console.log('Received Event', req.body.type);
+
+    res.send({});
+} )
 
 app.listen(4000, () =>{
     console.log('Listening on 4000');
