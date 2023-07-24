@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 
-export  default ({postId}) => {
+const CommentCreate = ({postId}) => {
     const [content, setContent] = useState('');
 
     const onSubmit = async (event) =>{
@@ -29,4 +29,5 @@ export  default ({postId}) => {
             <button className="btn btn-primary">Submit</button>
         </form>
     </div>);
-}
+};
+export default CommentCreate;
